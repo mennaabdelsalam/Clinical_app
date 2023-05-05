@@ -38,7 +38,12 @@ dependencies:
   animated_widgets: 
   flutter_local_notifications: 
   lottie: 
-  intl: 
+  intl:
+  flutter_staggered_grid_view: ^0.6.2
+  video_player: ^2.5.1
+  url_launcher: ^6.1.7
+  pigeon: ^1.0.7
+
 
 dev_dependencies:
   flutter_test:
@@ -63,9 +68,40 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/leg.png
+    - assets/images/a3sab.png
+    - assets/images/alb.png
+    - assets/images/ansoleen.png
+    - assets/images/cancer.png
+    - assets/images/eye.png
+    - assets/images/gehaz_hadmy.png
+    - assets/images/hand.png
+    - assets/images/kela.png
+    - assets/images/mana3a.png
+    - assets/images/ta8zeya.png
+    - assets/images/tahaleel.png
+    - assets/images/welcome_image.png
+    - assets/images/syrup.png
+    - assets/images/pills.png
+    - assets/images/capsule.png
+    - assets/images/cream.png
+    - assets/images/drops.png
+    - assets/images/syringe.png
+    - assets/images/10.png
+    - assets/images/11.png
+    - assets/images/22.png
+    - assets/images/33.png
+    - assets/images/44.png
+    - assets/images/55.png
+    - assets/images/66.png
+    - assets/images/77.png
+    - assets/images/88.png
+    - assets/images/99.png
+    - assets/images/1000.png
+
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

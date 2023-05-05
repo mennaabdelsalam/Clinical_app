@@ -19,12 +19,12 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
     'mg',
   ];
   final List<MedicineType> medicineTypes = [
-    MedicineType("Syrup", Image.asset("../assets/images/syrup.png"), true),
-    MedicineType("Pill", Image.asset("../assets/images/pills.png"), false),
-    MedicineType("Capsule", Image.asset("../assets/images/capsule.png"), false),
-    MedicineType("Cream", Image.asset("../assets/images/cream.png"), false),
-    MedicineType("Drops", Image.asset("../assets/images/drops.png"), false),
-    MedicineType("Syringe", Image.asset("../assets/images/syringe.png"), false),
+    MedicineType("Syrup", Image.asset("assets/images/syrup.png"), true),
+    MedicineType("Pill", Image.asset("assets/images/pills.png"), false),
+    MedicineType("Capsule", Image.asset("assets/images/capsule.png"), false),
+    MedicineType("Cream", Image.asset("assets/images/cream.png"), false),
+    MedicineType("Drops", Image.asset("assets/images/drops.png"), false),
+    MedicineType("Syringe", Image.asset("assets/images/syringe.png"), false),
   ];
   String? _currentItemSelected = 'pills';
   DateTime setDate = DateTime.now();
@@ -54,7 +54,7 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
             top: 30.0,
             bottom: 30.0,
           ),
-          child: Column(
+          child: ListView(
             children: [
               Container(
                 width: MediaQuery.of(context).size.width - 100,
@@ -81,8 +81,10 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width - 100,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                //width: MediaQuery.of(context).size.width - 200,
+
                 child: Row(
                   children: [
                     Container(
@@ -109,10 +111,10 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
                       ),
                     ),
                     const SizedBox(
-                      width: 10,
+                      width: 5,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width - 305,
+                      width: MediaQuery.of(context).size.width - 100,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
@@ -186,7 +188,9 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
                     Expanded(
                       child: Container(
                         height: double.infinity,
-                        child: FlatButton(
+                        color: Theme.of(context).primaryColor,
+                        child: TextButton(
+
                           onPressed: () => openTimePicker(),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -212,7 +216,7 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
                               )
                             ],
                           ),
-                          color: const Color.fromRGBO(7, 190, 200, 0.1),
+                          //color: const Color.fromRGBO(7, 190, 200, 0.1),
                         ),
                       ),
                     ),
@@ -222,7 +226,17 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
                     Expanded(
                       child: Container(
                         height: double.infinity,
-                        child: FlatButton(
+                        color: Theme.of(context).primaryColor,
+
+
+                        /*color: const Color.fromRGBO(
+                          7,
+                          190,
+                          200,
+                          0.1,
+                        ),*/
+                        child: TextButton(
+
                           onPressed: () => openDatePicker(),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -248,12 +262,7 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
                               )
                             ],
                           ),
-                          color: const Color.fromRGBO(
-                            7,
-                            190,
-                            200,
-                            0.1,
-                          ),
+
                         ),
                       ),
                     ),
@@ -261,13 +270,17 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
                 ),
               ),
               const Spacer(),
+              const SizedBox(
+                height: 20,
+              ),
               Container(
                 height: MediaQuery.of(context).size.height * 0.09,
                 width: double.infinity,
-                child: FlatButton(
+                color: Theme.of(context).primaryColor,
+                child: TextButton(
                   // handler: () async => savePill(),
                   onPressed: () {},
-                  color: Theme.of(context).primaryColor,
+
                   child: const Text(
                     "Done",
                     style: TextStyle(
